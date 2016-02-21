@@ -1,0 +1,3 @@
+war_machine_homepage:
+    path:     /
+    defaults: { _controller: WarMachineBundle:Default:index }

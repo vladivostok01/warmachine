@@ -1,3 +1,7 @@
+war_machine:
+    resource: "@WarMachineBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

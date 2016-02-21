@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Horizon of War</h1>
+<div class="container">
+{% for war in wars %}
+	<div class="war-summary row">
+		<div class="war-aggressor col-sm-6">
+			<h2>{{ war.aggressor.name }}</h2>
+		</div>
+		<div class="war-defender col-sm-6">
+			<h2>{{ war.defender.name }}</h2>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{%endblock%}

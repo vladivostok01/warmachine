@@ -1,0 +1,44 @@
+(
+    [timeFinished] => 2004-12-01T22:13:00
+    [openForAllies] => 
+    [timeStarted] => 2003-05-19T04:57:00
+    [allyCount] => 0
+    [timeDeclared] => 2003-05-18T04:57:00
+    [aggressor] => stdClass Object
+        (
+            [shipsKilled] => 0
+            [shipsKilled_str] => 0
+            [name] => Frontier Alliance
+            [href] => https://public-crest.eveonline.com/corporations/144862538/
+            [id_str] => 144862538
+            [icon] => stdClass Object
+                (
+                    [href] => http://imageserver.eveonline.com/Corporation/144862538_128.png
+                )
+
+            [id] => 144862538
+            [iskKilled] => 0
+        )
+
+    [mutual] => 
+    [allyCount_str] => 0
+    [killmails] => https://public-crest.eveonline.com/wars/9/killmails/all/
+    [id_str] => 9
+    [defender] => stdClass Object
+        (
+            [shipsKilled] => 0
+            [shipsKilled_str] => 0
+            [name] => BuTang Inc.
+            [href] => https://public-crest.eveonline.com/corporations/147510323/
+            [id_str] => 147510323
+            [icon] => stdClass Object
+                (
+                    [href] => http://imageserver.eveonline.com/Corporation/147510323_128.png
+                )
+
+            [id] => 147510323
+            [iskKilled] => 0
+        )
+
+    [id] => 9
+)

@@ -1,0 +1,13 @@
+parameters:
+  crest.endpoint: "https://public-crest.eveonline.com/"
+
+services:
+  crest.client:
+    class: WarMachineBundle\CREST\Client
+    arguments: [%crest.endpoint%]
+  crest.warmachine:
+    class: WarMachineBundle\CREST\WarMachine
+    arguments: ["@crest.client"]
+#    war_machine.example:
+#        class: WarMachineBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
