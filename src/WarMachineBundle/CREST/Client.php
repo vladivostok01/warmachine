@@ -10,6 +10,10 @@ class Client{
 
 	protected $url = null;
 
+	protected $request_count = 0;
+
+	protected $request_max = 30;
+
 	public function __construct($url){
 		$this->url = $url;
 	}
@@ -19,7 +23,7 @@ class Client{
 	}
 
 	public function war($id){
-		return $this->request(self::WARS.$id);
+		return $this->request(self::WARS.$id.'/');
 	}
 
 	public function corps(){
@@ -27,10 +31,16 @@ class Client{
 	}
 
 	public function corp($id){
-		return $this->request(self::CORPS.$id);
+		return $this->request(self::CORPS.$id.'/');
 	}
 
 	public function request($frag){
+		$this->request_count++;
+		
+		if($this->request_count >= $this->request_max){
+			sleep(1);
+		}
+
 		if(eregi('^http', $frag)){
 			$endpoint = $frag;
 		} else {

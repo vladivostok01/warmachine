@@ -1,13 +1,21 @@
 parameters:
-  crest.endpoint: "https://public-crest.eveonline.com/"
-
+#  crest.endpoint: "https://public-crest.eveonline.com/"
+   crest.endpoint: "https://crest-tq.eveonline.com/"
 services:
   crest.client:
     class: WarMachineBundle\CREST\Client
     arguments: [%crest.endpoint%]
+  crest.client.spider:
+    class: WarMachineBundle\CREST\SpiderClient
+    arguments: [%crest.endpoint%]
   crest.warmachine:
     class: WarMachineBundle\CREST\WarMachine
     arguments: ["@crest.client"]
+  warmachine.command.sync:
+    class: WarMachineBundle\CREST\WarMachineCommandSync
+    arguments: ["@crest.warmachine", "@doctrine.orm.entity_manager"]
+    tags:
+      -  { name: console.command }
 #    war_machine.example:
 #        class: WarMachineBundle\Example
 #        arguments: ["@service_id", "plain_value", %parameter%]

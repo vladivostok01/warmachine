@@ -10,17 +10,35 @@ class WarMachine{
 
 	}
 
-	public function getWarSummary(){
+	public function getWar($id)
+	{
+		return $this->client->war($id);
+	}
 
-		$wars = $this->client->wars();
-		$wars = array_slice($wars->items, 0, 10);
-		$details = array();
+	public function getKillMails($war)
+	{
+		return $this->client->request($war->killmails);
+	}
 
-		foreach($wars as $war){
-			$details[] = $this->client->request($war->href);
+	public function request($href)
+	{
+		return $this->client->request($href);
+	}
+
+	public function getWarSummary($id){
+
+		$war = $this->client->war($id);
+		return $
+		$killmail = $this->client->request($war->killmails);
+		$kills = array();
+		//print_r($killmail);
+		//die();
+		foreach($killmail->items as $mail){
+			$kills[] = $this->client->request($mail->href);
 		}
 
-		return $details;
+		$war->kills = $kills;
+		return $war;
 
 	}
 
